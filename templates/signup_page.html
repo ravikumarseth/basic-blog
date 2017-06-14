@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup Page</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Signup</h2>
+  <form method="post">
+    <label>Username
+      <input name="username" type="text" autofocus {% if username_valid %} value={{username}} {% endif %}/>
+      {% if not (username_valid or first_login) %}
+      <span class="error">
+        That's not a valid username.
+      </span>
+      {% endif %}
+    </label>
+    <br />
+    <label>Password
+      <input name="password" type="password"/>
+      {% if not (password_valid or first_login) %}
+      <span class="error">
+        That's not a valid password.
+      </span>
+      {% endif %}
+    </label>
+    <br />
+    <label>Verify Password
+      <input name="verify" type="password"/>
+      {% if password %}
+        {% if not (verify_valid or first_login) %}
+        <span class="error">
+          Your passwords didn't match.
+        </span>
+        {% endif %}
+      {% endif %}
+    </label>
+    <br />
+    <label>E-mail(optional)
+      <input name="email" type="email" value="{{ email }}"/>
+    </label><br />
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>

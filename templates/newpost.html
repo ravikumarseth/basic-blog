@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Make a New Blog Post</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+  body {
+    font-family: sans-serif;
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    }
+    .error{
+      color: red;
+    }
+    label {
+      display: block;
+      font-size: 20px;
+    }
+    input[type=text] {
+      width: 400px;
+      font-size: 20px;
+      padding: 2px;
+    }
+    textarea {
+      width: 95%;
+      height: 60vh;
+      font-size: 17px;
+      font-family: monospace;
+    }
+    input[type=submit] {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <h1>New Blog</h1>
+  <form method="post">
+    <label>
+      <div>
+        Title
+      </div>
+      <input type="text" name="subject" value="{{title}}" autofocus/>
+    </label>
+    <label>
+      <div>
+        Blog
+      </div>
+      <textarea name="content">{{blog}}</textarea>
+    </label>
+    <div class="error">
+      {{error}}
+    </div>
+    <input type="submit" />
+  </form>
+</body>
+</html>
